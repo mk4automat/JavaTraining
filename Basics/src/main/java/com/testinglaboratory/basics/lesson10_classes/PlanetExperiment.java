@@ -11,7 +11,7 @@ import java.util.Scanner;
 // feel free to check Java documentation i.e. for naming conventions
 // think where can we get rid of statics, and make it even omer object oriented
 // good luck, have fun, build your world
-public class planetExperiment {
+public class PlanetExperiment {
 
     static List<Human> society = new ArrayList<>();
     static int peopleOnPlanet = new Random().nextInt(1000);
@@ -28,15 +28,14 @@ public class planetExperiment {
          */
 
 
-        crateTheWorld();
-        System.out.println("we have " + society.size() + "peoples On Planet");
+        createTheWorld();
+        printAllPeople();
 
         Scanner scaner = new Scanner(System.in);
         int exitSignal = 1;
         do {
-
             System.out.println("Press 0 to end simulation");
-            System.out.println("what Would you do: \n 1: get count of all people \n 2: get all mens ");
+            System.out.println("what Would you do: \n 1: get count of all people \n 2: get all men ");
             int option = scaner.nextInt();
             switch (option) {
                 case 0:
@@ -62,15 +61,24 @@ public class planetExperiment {
         System.out.println("we have " + society.size() + "peoples On Planet");
     }
 
-    public static void crateTheWorld() {
-        int counter = 0;
-        while (counter != peopleOnPlanet) {
-            counter++;
+    public static void createTheWorld() {
+        for(int counter = 0; counter < peopleOnPlanet; counter++) {
             if (counter % 3 == 0) {
                 society.add(new Man());
             } else {
                 society.add(new Woman());
             }
         }
+
+
+//        int counter = 0;
+//        while (counter != peopleOnPlanet) {
+//            counter++;
+//            if (counter % 3 == 0) {
+//                society.add(new Man());
+//            } else {
+//                society.add(new Woman());
+//            }
+//        }
     }
 }

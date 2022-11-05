@@ -5,6 +5,7 @@ public class ConversionsAndCasting {
 
     public static void main(String[] args) {
         int otherNumber = -10;
+        System.out.println("Other number" + otherNumber);
         double floatingPointNumber = 12.21;
         // conversion
 
